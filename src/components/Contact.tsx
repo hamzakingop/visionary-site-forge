@@ -7,17 +7,11 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { 
   Mail, 
-  Phone, 
-  MapPin, 
   Send, 
-  Github, 
-  Linkedin, 
-  Twitter,
-  Calendar,
   MessageSquare,
-  Clock,
-  Globe
+  Calendar
 } from "lucide-react";
+import { SiDiscord } from "react-icons/si";
 import { cn } from "@/lib/utils";
 
 const Contact = () => {
@@ -75,53 +69,17 @@ const Contact = () => {
     {
       icon: <Mail className="h-5 w-5" />,
       label: "Email",
-      value: "alex.chen@email.com",
-      href: "mailto:alex.chen@email.com"
-    },
-    {
-      icon: <Phone className="h-5 w-5" />,
-      label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
-    },
-    {
-      icon: <MapPin className="h-5 w-5" />,
-      label: "Location",
-      value: "San Francisco, CA",
-      href: "#"
-    },
-    {
-      icon: <Clock className="h-5 w-5" />,
-      label: "Response Time",
-      value: "Within 24 hours",
-      href: "#"
+      value: "hamzaha98181@gmail.com",
+      href: "mailto:hamzaha98181@gmail.com"
     }
   ];
 
   const socialLinks = [
     {
-      icon: <Github className="h-5 w-5" />,
-      label: "GitHub",
-      href: "https://github.com",
-      color: "hover:text-gray-600"
-    },
-    {
-      icon: <Linkedin className="h-5 w-5" />,
-      label: "LinkedIn",
-      href: "https://linkedin.com",
-      color: "hover:text-blue-600"
-    },
-    {
-      icon: <Twitter className="h-5 w-5" />,
-      label: "Twitter",
-      href: "https://twitter.com",
-      color: "hover:text-blue-400"
-    },
-    {
-      icon: <Globe className="h-5 w-5" />,
-      label: "Website",
-      href: "#",
-      color: "hover:text-green-600"
+      icon: <SiDiscord className="h-5 w-5" />,
+      label: "Discord",
+      href: "https://discord.gg/yourserver",
+      color: "hover:text-indigo-500"
     }
   ];
 
@@ -262,12 +220,15 @@ const Contact = () => {
               <h3 className="text-xl font-semibold mb-6 text-foreground">Contact Information</h3>
               <div className="space-y-4">
                 {contactInfo.map((info, index) => (
-                  <div key={index} className="flex items-center space-x-4">
-                    <div className="p-2 bg-primary/10 text-primary rounded-lg">
+                  <div 
+                    key={index} 
+                    className="group flex items-center space-x-4 p-4 rounded-lg border border-primary/20 bg-gradient-to-r from-primary/5 to-accent/5 hover:border-primary/40 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/10"
+                  >
+                    <div className="p-3 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-lg group-hover:rotate-12 transition-transform duration-300 shadow-lg">
                       {info.icon}
                     </div>
                     <div>
-                      <p className="text-sm text-muted-foreground">{info.label}</p>
+                      <p className="text-sm text-muted-foreground group-hover:text-primary transition-colors">{info.label}</p>
                       {info.href && info.href !== "#" ? (
                         <a 
                           href={info.href}
@@ -286,8 +247,8 @@ const Contact = () => {
 
             {/* Social Links */}
             <Card className="p-6 bg-card border-card-border">
-              <h3 className="text-xl font-semibold mb-6 text-foreground">Follow Me</h3>
-              <div className="grid grid-cols-2 gap-4">
+              <h3 className="text-xl font-semibold mb-6 text-foreground">Connect With Me</h3>
+              <div className="space-y-4">
                 {socialLinks.map((social, index) => (
                   <a
                     key={index}
@@ -295,15 +256,15 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={cn(
-                      "flex items-center space-x-3 p-3 bg-secondary rounded-lg",
-                      "hover:bg-secondary-hover transition-all duration-300 group",
+                      "group flex items-center space-x-4 p-4 rounded-lg border border-primary/20 bg-gradient-to-r from-primary/5 to-accent/5",
+                      "hover:border-primary/40 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/10",
                       social.color
                     )}
                   >
-                    <div className="group-hover:scale-110 transition-transform">
+                    <div className="p-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-lg group-hover:rotate-12 transition-transform duration-300 shadow-lg">
                       {social.icon}
                     </div>
-                    <span className="font-medium">{social.label}</span>
+                    <span className="font-medium group-hover:text-primary transition-colors">{social.label}</span>
                   </a>
                 ))}
               </div>

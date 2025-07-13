@@ -55,10 +55,22 @@ const Hero = () => {
             <Sparkles className="h-5 w-5 text-primary animate-pulse" style={{ animationDelay: '0.5s' }} />
           </div>
 
+          {/* Profile Image */}
+          <div className="mb-8 flex justify-center">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-primary-glow rounded-full animate-spin-slow opacity-75 blur-sm"></div>
+              <img 
+                src="/lovable-uploads/165e01ab-3e63-428b-b264-fd5ea8ef0194.png"
+                alt="Profile"
+                className="relative w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-background shadow-2xl animate-float hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          </div>
+
           {/* Name */}
           <h1 className="text-6xl md:text-8xl font-bold mb-6 tracking-tight">
-            <span className="bg-gradient-text bg-clip-text text-transparent">
-              Alex Chen
+            <span className="bg-gradient-text bg-clip-text text-transparent animate-gradient">
+              Hamza
             </span>
           </h1>
 
