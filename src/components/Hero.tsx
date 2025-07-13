@@ -70,7 +70,7 @@ const Hero = () => {
           {/* Name */}
           <h1 className="text-6xl md:text-8xl font-bold mb-6 tracking-tight">
             <span className="bg-gradient-text bg-clip-text text-transparent animate-gradient">
-              Hamza
+              HELLFARD
             </span>
           </h1>
 
