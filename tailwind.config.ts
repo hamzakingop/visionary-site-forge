@@ -19,8 +19,9 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Inter', 'system-ui', 'sans-serif'],
-				mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+				sans: ['Press Start 2P', 'Inter', 'system-ui', 'sans-serif'],
+				minecraft: ['Press Start 2P', 'monospace'],
+				mono: ['Press Start 2P', 'JetBrains Mono', 'Fira Code', 'monospace'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -126,6 +127,12 @@ export default {
 				'shimmer': {
 					'0%': { backgroundPosition: '-200% 0' },
 					'100%': { backgroundPosition: '200% 0' }
+				},
+				'text-shadow': {
+					'sm': '1px 1px 2px rgba(0, 0, 0, 0.6)',
+					'md': '2px 2px 4px rgba(0, 0, 0, 0.6)', 
+					'lg': '3px 3px 6px rgba(0, 0, 0, 0.7)',
+					'xl': '4px 4px 8px rgba(0, 0, 0, 0.8)',
 				}
 			},
 			animation: {

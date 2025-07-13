@@ -68,8 +68,8 @@ const Hero = () => {
           </div>
 
           {/* Name */}
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 tracking-tight">
-            <span className="bg-gradient-text bg-clip-text text-transparent animate-gradient">
+          <h1 className="text-4xl md:text-6xl font-minecraft font-bold mb-6 tracking-wider text-shadow-lg">
+            <span className="bg-gradient-text bg-clip-text text-transparent animate-gradient drop-shadow-lg filter">
               HELLFARD
             </span>
           </h1>
