@@ -347,7 +347,7 @@ const Experience = () => {
     <section 
       ref={sectionRef}
       id="experience" 
-      className="py-20 bg-background relative overflow-hidden"
+      className="py-12 bg-background relative overflow-hidden"
     >
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}

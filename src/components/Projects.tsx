@@ -146,7 +146,7 @@ const Projects = () => {
     <section 
       ref={sectionRef}
       id="projects" 
-      className="py-20 bg-background-subtle relative overflow-hidden"
+      className="py-12 bg-background-subtle relative overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-5">

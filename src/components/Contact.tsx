@@ -98,7 +98,7 @@ const Contact = () => {
     <section 
       ref={sectionRef}
       id="contact" 
-      className="py-20 bg-background-subtle relative overflow-hidden"
+      className="py-12 bg-background-subtle relative overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-5">
@@ -110,7 +110,7 @@ const Contact = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className={cn(
-          "text-center mb-16 transition-all duration-1000",
+          "text-center mb-12 transition-all duration-1000",
           isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
         )}>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">

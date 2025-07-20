@@ -103,7 +103,7 @@ const Hero = () => {
           </div>
 
           {/* CTA Button */}
-          <div className="flex justify-center mb-16">
+          <div className="flex justify-center mb-12">
             <Button 
               variant="hero" 
               size="xl"

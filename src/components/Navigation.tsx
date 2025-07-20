@@ -49,7 +49,7 @@ const Navigation = () => {
             className="text-2xl font-bold bg-gradient-text bg-clip-text text-transparent cursor-pointer"
             onClick={() => scrollToSection("hero")}
           >
-            DevPortfolio
+            Developer
           </div>
 
           {/* Desktop Navigation */}

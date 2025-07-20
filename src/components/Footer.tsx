@@ -62,7 +62,7 @@ const Footer = () => {
                 <Code2 className="h-6 w-6 text-primary-foreground" />
               </div>
               <span className="text-2xl font-bold bg-gradient-text bg-clip-text text-transparent">
-                DevPortfolio
+                Developer
               </span>
             </div>
             <p className="text-muted-foreground mb-6 leading-relaxed">
