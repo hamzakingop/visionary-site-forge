@@ -102,8 +102,8 @@ const Hero = () => {
             ))}
           </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+          {/* CTA Button */}
+          <div className="flex justify-center mb-16">
             <Button 
               variant="hero" 
               size="xl"
@@ -113,14 +113,6 @@ const Hero = () => {
               <Code2 className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
               View My Work
               <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button 
-              variant="glass" 
-              size="xl"
-              className="group"
-            >
-              <Download className="mr-2 h-5 w-5 group-hover:translate-y-1 transition-transform" />
-              Download CV
             </Button>
           </div>
 

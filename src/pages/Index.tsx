@@ -7,11 +7,13 @@ import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import LightningEffect from "@/components/LightningEffect";
+import FloatingSkills from "@/components/FloatingSkills";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background relative">
       <LightningEffect />
+      <FloatingSkills />
       <div className="relative z-10">
         <Navigation />
         <main>

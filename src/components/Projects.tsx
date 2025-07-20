@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import LightningCard from "@/components/LightningCard";
 import { 
   ExternalLink, 
   Github, 
@@ -189,13 +190,15 @@ const Projects = () => {
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
-            <Card 
+            <LightningCard 
               key={project.id}
               className={cn(
-                "group overflow-hidden bg-card border-card-border hover:shadow-xl transition-all duration-500",
+                "transition-all duration-1000",
                 isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
               )}
               style={{ transitionDelay: `${400 + index * 100}ms` }}
+            >
+              <Card className="overflow-hidden bg-card border-card-border h-full"
             >
               {/* Project Image */}
               <div className="relative overflow-hidden">
@@ -260,7 +263,8 @@ const Projects = () => {
                   </Button>
                 </div>
               </div>
-            </Card>
+              </Card>
+            </LightningCard>
           ))}
         </div>
 

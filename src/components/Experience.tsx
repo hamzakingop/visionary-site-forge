@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import LightningCard from "@/components/LightningCard";
 import { 
   MapPin, 
   Calendar, 
@@ -170,13 +171,16 @@ const Experience = () => {
   const renderExperience = () => (
     <div className="space-y-8">
       {experiences.map((exp, index) => (
-        <Card 
+        <LightningCard 
           key={index}
           className={cn(
-            "p-8 bg-gradient-card border-card-border transition-all duration-1000",
+            "transition-all duration-1000",
             isVisible ? "translate-x-0 opacity-100" : "-translate-x-8 opacity-0"
           )}
           style={{ transitionDelay: `${index * 200}ms` }}
+          intensity="medium"
+        >
+          <Card className="p-8 bg-gradient-card border-card-border"
         >
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
             <div className="flex-1">
@@ -233,7 +237,8 @@ const Experience = () => {
               </div>
             </div>
           </div>
-        </Card>
+          </Card>
+        </LightningCard>
       ))}
     </div>
   );
@@ -241,13 +246,16 @@ const Experience = () => {
   const renderEducation = () => (
     <div className="space-y-8">
       {education.map((edu, index) => (
-        <Card 
+        <LightningCard 
           key={index}
           className={cn(
-            "p-8 bg-gradient-card border-card-border transition-all duration-1000",
+            "transition-all duration-1000",
             isVisible ? "translate-x-0 opacity-100" : "-translate-x-8 opacity-0"
           )}
           style={{ transitionDelay: `${index * 200}ms` }}
+          intensity="low"
+        >
+          <Card className="p-8 bg-gradient-card border-card-border"
         >
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
             <div className="flex-1">
@@ -297,7 +305,8 @@ const Experience = () => {
               </div>
             </div>
           </div>
-        </Card>
+          </Card>
+        </LightningCard>
       ))}
     </div>
   );
@@ -305,13 +314,16 @@ const Experience = () => {
   const renderAchievements = () => (
     <div className="grid md:grid-cols-2 gap-6">
       {achievements.map((achievement, index) => (
-        <Card 
+        <LightningCard 
           key={index}
           className={cn(
-            "p-6 bg-gradient-card border-card-border transition-all duration-1000 hover:shadow-lg",
+            "transition-all duration-1000",
             isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           )}
           style={{ transitionDelay: `${index * 150}ms` }}
+          intensity="low"
+        >
+          <Card className="p-6 bg-gradient-card border-card-border"
         >
           <div className="flex items-start space-x-4">
             <div className="text-3xl">{achievement.badge}</div>
@@ -325,7 +337,8 @@ const Experience = () => {
               <p className="text-sm text-muted-foreground">{achievement.description}</p>
             </div>
           </div>
-        </Card>
+          </Card>
+        </LightningCard>
       ))}
     </div>
   );

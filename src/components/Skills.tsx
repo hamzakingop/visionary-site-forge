@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
+import LightningCard from "@/components/LightningCard";
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -104,13 +105,16 @@ const Skills = () => {
         {/* Skills Grid */}
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
           {skillCategories.map((category, categoryIndex) => (
-            <Card 
+            <LightningCard 
               key={category.title}
               className={cn(
-                "group p-8 bg-gradient-card border-card-border transition-all duration-1000 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 hover:border-primary/30",
+                "transition-all duration-1000",
                 isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
               )}
               style={{ transitionDelay: `${categoryIndex * 200}ms` }}
+              intensity="high"
+            >
+              <Card className="p-8 bg-gradient-card border-card-border h-full"
             >
               <div className="flex items-center space-x-3 mb-6">
                 <div className="text-3xl animate-bounce group-hover:scale-125 transition-transform duration-300" style={{ animationDelay: `${categoryIndex * 0.2}s` }}>
@@ -151,15 +155,21 @@ const Skills = () => {
                   </div>
                 ))}
               </div>
-            </Card>
+              </Card>
+            </LightningCard>
           ))}
         </div>
 
         {/* Technologies Cloud */}
-        <Card className={cn(
-          "p-8 bg-card border-card-border transition-all duration-1000 delay-800",
-          isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-        )}>
+        <LightningCard 
+          className={cn(
+            "transition-all duration-1000 delay-800",
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+          )}
+          intensity="medium"
+        >
+          <Card className="p-8 bg-card border-card-border"
+        >
           <h3 className="text-2xl font-semibold mb-6 text-center text-foreground">
             Technologies & Tools
           </h3>
@@ -191,7 +201,8 @@ const Skills = () => {
               </div>
             ))}
           </div>
-        </Card>
+          </Card>
+        </LightningCard>
 
         {/* Bottom CTA */}
         <div className={cn(
