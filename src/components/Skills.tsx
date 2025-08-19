@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Card } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
+import { Code, Braces, Palette, Server, Database, Cloud, GitBranch, Wrench, Smartphone, Boxes } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import LightningCard from "@/components/LightningCard";
 
@@ -25,45 +26,45 @@ const Skills = () => {
     return () => observer.disconnect();
   }, []);
 
-  const skillCategories = [
+  const skillCategories: { title: string; icon: LucideIcon; skills: { name: string; color: string; icon: LucideIcon }[] }[] = [
     {
       title: "Frontend",
       icon: Code,
       skills: [
         { name: "React/Next.js", color: "from-blue-500 to-cyan-500", icon: Code },
-        { name: "TypeScript", color: "from-blue-600 to-blue-700", icon: Code },
-        { name: "Tailwind CSS", color: "from-teal-500 to-green-500", icon: Code },
+        { name: "TypeScript", color: "from-blue-600 to-blue-700", icon: Braces },
+        { name: "Tailwind CSS", color: "from-teal-500 to-green-500", icon: Palette },
         { name: "Vue.js", color: "from-green-500 to-emerald-500", icon: Code },
       ]
     },
     {
       title: "Backend",
-      icon: "⚙️",
+      icon: Server,
       skills: [
-        { name: "Node.js", level: 92, color: "from-green-600 to-green-700", icon: "🟢" },
-        { name: "Python", level: 85, color: "from-yellow-500 to-orange-500", icon: "🐍" },
-        { name: "PostgreSQL", level: 88, color: "from-blue-700 to-indigo-600", icon: "🐘" },
-        { name: "MongoDB", level: 80, color: "from-green-700 to-green-800", icon: "🍃" },
+        { name: "Node.js", color: "from-green-600 to-green-700", icon: Server },
+        { name: "Python", color: "from-yellow-500 to-orange-500", icon: Braces },
+        { name: "PostgreSQL", color: "from-blue-700 to-indigo-600", icon: Database },
+        { name: "MongoDB", color: "from-green-700 to-green-800", icon: Database },
       ]
     },
     {
       title: "DevOps & Tools",
-      icon: "🛠️",
+      icon: Wrench,
       skills: [
-        { name: "AWS", level: 85, color: "from-orange-500 to-red-500", icon: "☁️" },
-        { name: "Docker", level: 82, color: "from-blue-500 to-blue-600", icon: "🐳" },
-        { name: "Git", level: 90, color: "from-gray-600 to-gray-700", icon: "🔀" },
-        { name: "CI/CD", level: 78, color: "from-purple-500 to-pink-500", icon: "🔄" },
+        { name: "AWS", color: "from-orange-500 to-red-500", icon: Cloud },
+        { name: "Docker", color: "from-blue-500 to-blue-600", icon: Boxes },
+        { name: "Git", color: "from-gray-600 to-gray-700", icon: GitBranch },
+        { name: "CI/CD", color: "from-purple-500 to-pink-500", icon: Wrench },
       ]
     },
     {
       title: "Design & Mobile",
-      icon: "📱",
+      icon: Smartphone,
       skills: [
-        { name: "React Native", level: 80, color: "from-purple-600 to-blue-600", icon: "📱" },
-        { name: "Figma", level: 75, color: "from-pink-500 to-purple-500", icon: "🎨" },
-        { name: "UI/UX Design", level: 70, color: "from-indigo-500 to-purple-600", icon: "✨" },
-        { name: "Three.js", level: 65, color: "from-yellow-600 to-red-600", icon: "🌟" },
+        { name: "React Native", color: "from-purple-600 to-blue-600", icon: Smartphone },
+        { name: "Figma", color: "from-pink-500 to-purple-500", icon: Palette },
+        { name: "UI/UX Design", color: "from-indigo-500 to-purple-600", icon: Palette },
+        { name: "Three.js", color: "from-yellow-600 to-red-600", icon: Boxes },
       ]
     }
   ];
@@ -102,62 +103,46 @@ const Skills = () => {
           </p>
         </div>
 
-        {/* Skills Grid */}
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
-          {skillCategories.map((category, categoryIndex) => (
-            <LightningCard 
-              key={category.title}
-              className={cn(
-                "transition-all duration-1000",
-                isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-              )}
-              style={{ transitionDelay: `${categoryIndex * 200}ms` }}
-              intensity="high"
-            >
-              <Card className="p-8 bg-gradient-card border-card-border h-full"
-            >
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="text-3xl animate-bounce group-hover:scale-125 transition-transform duration-300" style={{ animationDelay: `${categoryIndex * 0.2}s` }}>
-                  {category.icon}
-                </div>
-                <h3 className="text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">{category.title}</h3>
-              </div>
-              <div className="space-y-6">
-                {category.skills.map((skill, skillIndex) => (
-                  <div 
-                    key={skill.name} 
-                    className="group/skill space-y-2 p-3 rounded-lg hover:bg-primary/5 transition-all duration-300 border border-transparent hover:border-primary/20"
-                  >
-                    <div className="flex justify-between items-center">
-                      <div className="flex items-center space-x-2">
-                        <span className="text-lg group-hover/skill:animate-pulse">{skill.icon}</span>
-                        <span className="font-medium text-foreground group-hover/skill:text-primary transition-colors">{skill.name}</span>
-                      </div>
-                      <span className="text-sm text-muted-foreground group-hover/skill:text-primary transition-colors">{skill.level}%</span>
+          {skillCategories.map((category, categoryIndex) => {
+            const CategoryIcon = category.icon;
+            return (
+              <LightningCard 
+                key={category.title}
+                className={cn(
+                  "transition-all duration-1000",
+                  isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+                )}
+                style={{ transitionDelay: `${categoryIndex * 200}ms` }}
+                intensity="high"
+              >
+                <Card className="p-8 bg-gradient-card border-card-border h-full">
+                  <div className="flex items-center space-x-3 mb-6">
+                    <div className="p-2 rounded-lg bg-secondary/40 border border-card-border animate-glow-pulse">
+                      <CategoryIcon className="h-6 w-6 text-primary" />
                     </div>
-                    <div className="relative">
-                      <Progress 
-                        value={isVisible ? skill.level : 0} 
-                        className="h-2 bg-secondary"
-                      />
-                      <div 
-                        className={cn(
-                          "absolute inset-0 h-2 rounded-full bg-gradient-to-r transition-all duration-1000 ease-out shadow-lg",
-                          skill.color
-                        )}
-                        style={{ 
-                          width: isVisible ? `${skill.level}%` : '0%',
-                          transitionDelay: `${(categoryIndex * 200) + (skillIndex * 100)}ms`,
-                          boxShadow: `0 0 20px hsl(var(--primary) / 0.3)`
-                        }}
-                      />
-                    </div>
+                    <h3 className="text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">{category.title}</h3>
                   </div>
-                ))}
-              </div>
-              </Card>
-            </LightningCard>
-          ))}
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {category.skills.map((skill, skillIndex) => {
+                      const SkillIcon = skill.icon;
+                      return (
+                        <div 
+                          key={skill.name} 
+                          className="flex items-center space-x-2 px-3 py-2 rounded-lg border border-card-border bg-card/40 hover:bg-card/60 transition-all duration-300 hover:translate-y-[-2px]"
+                          style={{ transitionDelay: `${(categoryIndex * 150) + (skillIndex * 50)}ms` }}
+                        >
+                          <SkillIcon className="w-4 h-4 text-primary" />
+                          <span className="text-sm font-medium">{skill.name}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </Card>
+              </LightningCard>
+            );
+          })}
         </div>
 
         {/* Technologies Cloud */}
