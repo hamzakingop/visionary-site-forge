@@ -6,14 +6,12 @@ import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import LightningEffect from "@/components/LightningEffect";
-import FloatingSkills from "@/components/FloatingSkills";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background relative">
-      <LightningEffect />
-      <FloatingSkills />
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      <AnimatedBackground />
       <div className="relative z-10">
         <Navigation />
         <main>

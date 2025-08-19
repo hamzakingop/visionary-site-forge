@@ -46,10 +46,10 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div 
-            className="text-2xl font-bold bg-gradient-text bg-clip-text text-transparent cursor-pointer"
+            className="text-2xl font-display font-bold bg-gradient-text bg-clip-text text-transparent cursor-pointer"
             onClick={() => scrollToSection("hero")}
           >
-            Developer
+            Hell Development
           </div>
 
           {/* Desktop Navigation */}

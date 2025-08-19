@@ -19,9 +19,9 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Press Start 2P', 'Inter', 'system-ui', 'sans-serif'],
-				minecraft: ['Press Start 2P', 'monospace'],
-				mono: ['Press Start 2P', 'JetBrains Mono', 'Fira Code', 'monospace'],
+				sans: ['Exo 2', 'Inter', 'system-ui', 'sans-serif'],
+				display: ['Orbitron', 'Arial Black', 'sans-serif'],
+				mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

@@ -61,8 +61,8 @@ const Footer = () => {
               <div className="p-2 bg-gradient-primary rounded-lg">
                 <Code2 className="h-6 w-6 text-primary-foreground" />
               </div>
-              <span className="text-2xl font-bold bg-gradient-text bg-clip-text text-transparent">
-                Developer
+              <span className="text-2xl font-display font-bold bg-gradient-text bg-clip-text text-transparent">
+                Hell Development
               </span>
             </div>
             <p className="text-muted-foreground mb-6 leading-relaxed">

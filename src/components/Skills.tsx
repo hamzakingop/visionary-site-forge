@@ -28,12 +28,12 @@ const Skills = () => {
   const skillCategories = [
     {
       title: "Frontend",
-      icon: "⚛️",
+      icon: Code,
       skills: [
-        { name: "React/Next.js", level: 95, color: "from-blue-500 to-cyan-500", icon: "⚛️" },
-        { name: "TypeScript", level: 90, color: "from-blue-600 to-blue-700", icon: "📘" },
-        { name: "Tailwind CSS", level: 88, color: "from-teal-500 to-green-500", icon: "🎨" },
-        { name: "Vue.js", level: 75, color: "from-green-500 to-emerald-500", icon: "💚" },
+        { name: "React/Next.js", color: "from-blue-500 to-cyan-500", icon: Code },
+        { name: "TypeScript", color: "from-blue-600 to-blue-700", icon: Code },
+        { name: "Tailwind CSS", color: "from-teal-500 to-green-500", icon: Code },
+        { name: "Vue.js", color: "from-green-500 to-emerald-500", icon: Code },
       ]
     },
     {

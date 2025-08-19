@@ -118,8 +118,9 @@
   }
 
   body {
-    @apply bg-background text-foreground font-minecraft;
+    @apply bg-background text-foreground font-sans;
     scroll-behavior: smooth;
+    font-weight: 500;
   }
 
   html {
