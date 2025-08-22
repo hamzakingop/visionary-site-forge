@@ -145,12 +145,6 @@ export default {
 				'float-particle': {
 					'0%, 100%': { transform: 'translateY(0px) rotate(0deg)', opacity: '0.4' },
 					'50%': { transform: 'translateY(-20px) rotate(180deg)', opacity: '1' }
-				},
-				'text-shadow': {
-					'sm': '1px 1px 2px rgba(0, 0, 0, 0.6)',
-					'md': '2px 2px 4px rgba(0, 0, 0, 0.6)', 
-					'lg': '3px 3px 6px rgba(0, 0, 0, 0.7)',
-					'xl': '4px 4px 8px rgba(0, 0, 0, 0.8)',
 				}
 			},
 			animation: {
@@ -167,6 +161,12 @@ export default {
 				'word-pop-out': 'word-pop-out 0.4s ease-in forwards',
 				'float-particle': 'float-particle 4s ease-in-out infinite',
 				'spin-slow': 'spin 8s linear infinite',
+			},
+			textShadow: {
+				'sm': '1px 1px 2px rgba(0, 0, 0, 0.6)',
+				'md': '2px 2px 4px rgba(0, 0, 0, 0.6)', 
+				'lg': '3px 3px 6px rgba(0, 0, 0, 0.7)',
+				'xl': '4px 4px 8px rgba(0, 0, 0, 0.8)',
 			}
 		}
 	},
