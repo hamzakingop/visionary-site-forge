@@ -128,6 +128,24 @@ export default {
 					'0%': { backgroundPosition: '-200% 0' },
 					'100%': { backgroundPosition: '200% 0' }
 				},
+				'lightning': {
+					'0%, 90%, 100%': { opacity: '0' },
+					'5%, 85%': { opacity: '1' }
+				},
+				'word-pop-in': {
+					'0%': { opacity: '0', transform: 'translateY(20px) scale(0.8)' },
+					'50%': { transform: 'translateY(-5px) scale(1.1)' },
+					'100%': { opacity: '1', transform: 'translateY(0) scale(1)' }
+				},
+				'word-pop-out': {
+					'0%': { opacity: '1', transform: 'translateY(0) scale(1)' },
+					'50%': { transform: 'translateY(-10px) scale(0.9)' },
+					'100%': { opacity: '0', transform: 'translateY(-20px) scale(0.8)' }
+				},
+				'float-particle': {
+					'0%, 100%': { transform: 'translateY(0px) rotate(0deg)', opacity: '0.4' },
+					'50%': { transform: 'translateY(-20px) rotate(180deg)', opacity: '1' }
+				},
 				'text-shadow': {
 					'sm': '1px 1px 2px rgba(0, 0, 0, 0.6)',
 					'md': '2px 2px 4px rgba(0, 0, 0, 0.6)', 
@@ -144,6 +162,11 @@ export default {
 				'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
 				'float': 'float 3s ease-in-out infinite',
 				'shimmer': 'shimmer 2s linear infinite',
+				'lightning': 'lightning 2s ease-in-out infinite',
+				'word-pop-in': 'word-pop-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards',
+				'word-pop-out': 'word-pop-out 0.4s ease-in forwards',
+				'float-particle': 'float-particle 4s ease-in-out infinite',
+				'spin-slow': 'spin 8s linear infinite',
 			}
 		}
 	},

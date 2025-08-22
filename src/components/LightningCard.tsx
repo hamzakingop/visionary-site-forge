@@ -19,6 +19,7 @@ const LightningCard = ({
   const cardRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
   const [tiltStyle, setTiltStyle] = useState({});
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const card = cardRef.current;
@@ -35,6 +36,11 @@ const LightningCard = ({
       const rotateX = (deltaY / rect.height) * 15;
       const rotateY = (deltaX / rect.width) * -15;
       
+      // Calculate mouse position relative to card
+      const mouseX = ((e.clientX - rect.left) / rect.width) * 100;
+      const mouseY = ((e.clientY - rect.top) / rect.height) * 100;
+      
+      setMousePosition({ x: mouseX, y: mouseY });
       setTiltStyle({
         transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`,
       });
@@ -115,19 +121,29 @@ const LightningCard = ({
         ))}
       </div>
 
-      {/* RGB Border Glow */}
+      {/* RGB Border Glow with animated gradient */}
       <div 
         className={cn(
-          "absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500",
-          "bg-gradient-to-r from-blue-500 via-purple-500 via-cyan-500 via-green-500 via-yellow-500 to-red-500",
-          "animate-gradient p-[2px]"
+          "absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-500",
+          "p-[2px] overflow-hidden"
         )}
-        style={{
-          background: `linear-gradient(45deg, ${colors.join(', ')})`,
-          backgroundSize: '400% 400%',
-        }}
       >
+        {/* Moving gradient border */}
+        <div 
+          className="absolute inset-0 animate-spin-slow"
+          style={{
+            background: `conic-gradient(from 0deg, ${colors.join(', ')}, ${colors[0]})`,
+          }}
+        />
         <div className="absolute inset-[2px] bg-card rounded-lg" />
+        
+        {/* Spotlight effect following mouse */}
+        <div 
+          className="absolute inset-0 opacity-30 transition-all duration-300"
+          style={{
+            background: `radial-gradient(300px circle at ${mousePosition.x}% ${mousePosition.y}%, ${colors[0]}40, transparent 70%)`,
+          }}
+        />
       </div>
 
       {/* Micro animations on hover */}

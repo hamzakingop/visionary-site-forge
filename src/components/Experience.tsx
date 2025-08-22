@@ -143,28 +143,28 @@ const Experience = () => {
       issuer: "Amazon Web Services",
       date: "2023",
       description: "Professional certification demonstrating expertise in designing distributed systems on AWS.",
-      badge: "🏆"
+      icon: <Award className="h-6 w-6" />
     },
     {
       title: "Open Source Contributor",
       issuer: "GitHub",
       date: "2022 - Present",
       description: "Active contributor to popular open-source projects with 100+ stars on personal repositories.",
-      badge: "⭐"
+      icon: <TrendingUp className="h-6 w-6" />
     },
     {
       title: "Tech Talk Speaker",
       issuer: "React Conference",
       date: "2023",
       description: "Presented 'Building Scalable React Applications' to an audience of 500+ developers.",
-      badge: "🎤"
+      icon: <Users className="h-6 w-6" />
     },
     {
       title: "Hackathon Winner",
       issuer: "TechCrunch Disrupt",
       date: "2022",
       description: "First place in healthcare category for developing an AI-powered patient management system.",
-      badge: "🥇"
+      icon: <Target className="h-6 w-6" />
     }
   ];
 
@@ -326,7 +326,9 @@ const Experience = () => {
           <Card className="p-6 bg-gradient-card border-card-border"
         >
           <div className="flex items-start space-x-4">
-            <div className="text-3xl">{achievement.badge}</div>
+            <div className="p-3 bg-primary/10 rounded-lg text-primary">
+              {achievement.icon}
+            </div>
             <div className="flex-1">
               <h3 className="text-lg font-semibold text-foreground mb-2">{achievement.title}</h3>
               <div className="flex items-center space-x-2 text-muted-foreground mb-3">

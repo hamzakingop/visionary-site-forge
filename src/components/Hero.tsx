@@ -5,6 +5,7 @@ import { ChevronDown, Sparkles, Code, Zap, Rocket } from "lucide-react";
 import { cn } from "@/lib/utils";
 import LightningCard from "./LightningCard";
 import GlassCard from "./GlassCard";
+import WordByWordText from "./WordByWordText";
 import profileAvatar from "@/assets/profile-avatar.jpg";
 
 const Hero = () => {
@@ -120,7 +121,7 @@ const Hero = () => {
             {/* Animated Role */}
             <div className="h-16 md:h-20 flex items-center justify-center">
               <h2 className="text-2xl md:text-4xl font-bold text-foreground/80 transition-all duration-500">
-                {roles[currentRole]}
+                <WordByWordText words={roles} className="min-w-[300px]" />
               </h2>
             </div>
           </div>
