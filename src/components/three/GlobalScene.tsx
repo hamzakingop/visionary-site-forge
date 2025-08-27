@@ -78,8 +78,9 @@ const CameraController = () => {
   const scroll = useScroll()
   
   useFrame(() => {
+    if (!scroll) return
     // Move camera through the 3D space based on scroll
-    const scrollOffset = scroll.offset
+    const scrollOffset = scroll.offset || 0
     camera.position.z = 50 - scrollOffset * 100
     camera.lookAt(0, 0, 0)
   })

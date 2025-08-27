@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
+import { OptimizedButton as Button } from "@/components/ui/OptimizedButton";
 import { Badge } from "@/components/ui/badge";
 import { ChevronDown, Sparkles, Code, Zap, Rocket } from "lucide-react";
 import { cn } from "@/lib/utils";
 import LightningCard from "./LightningCard";
 import GlassCard from "./GlassCard";
 import WordByWordText from "./WordByWordText";
-import profileAvatar from "@/assets/profile-avatar.jpg";
+import profileAvatar from "/lovable-uploads/d1df165b-34fc-4eb6-bfb3-285c0f89e4ea.png";
 
 const Hero = () => {
   const [mounted, setMounted] = useState(false);
@@ -87,7 +87,7 @@ const Hero = () => {
             <LightningCard 
               className="p-1"
               intensity="high"
-              colors={['#3b82f6', '#8b5cf6', '#06b6d4', '#10b981', '#f59e0b', '#ef4444']}
+              colors={['#8b5cf6', '#a855f7', '#c084fc', '#e879f9', '#fbbf24', '#f59e0b']}
             >
               <div className="relative">
                 <img

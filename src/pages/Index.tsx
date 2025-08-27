@@ -8,9 +8,8 @@ import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import AnimatedBackground from "@/components/AnimatedBackground";
 import LoadingScreen from "@/components/LoadingScreen";
-import GlobalScene from "@/components/three/GlobalScene";
+import PurpleGlobeScene from "@/components/three/PurpleGlobe";
 import MagneticCursor from "@/components/ui/MagneticCursor";
 
 const Index = () => {
@@ -20,17 +19,28 @@ const Index = () => {
     <MagneticCursor>
       {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
       <div className="min-h-screen bg-background relative overflow-hidden">
-        <GlobalScene />
-        <AnimatedBackground />
+        <PurpleGlobeScene />
         <div className="relative z-10">
           <Navigation />
-          <main>
-            <Hero />
-            <About />
-            <Skills />
-            <Projects />
-            <Experience />
-            <Contact />
+          <main className="space-y-0">
+            <section className="min-h-screen">
+              <Hero />
+            </section>
+            <section className="min-h-screen">
+              <About />
+            </section>
+            <section className="min-h-screen">
+              <Skills />
+            </section>
+            <section className="min-h-screen">
+              <Projects />
+            </section>
+            <section className="min-h-screen">
+              <Experience />
+            </section>
+            <section className="min-h-screen">
+              <Contact />
+            </section>
           </main>
           <Footer />
         </div>

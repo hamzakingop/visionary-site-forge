@@ -24,7 +24,7 @@ const MagneticCursor = ({ children }: MagneticCursorProps) => {
 
     const handleMouseEnter = (e: MouseEvent) => {
       const target = e.target as HTMLElement
-      if (target.classList.contains('magnetic') || target.closest('.magnetic')) {
+      if (target?.classList?.contains('magnetic') || target?.closest('.magnetic')) {
         setIsHovered(true)
         setCursorVariant('hover')
       }
